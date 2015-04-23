@@ -3,4 +3,8 @@
 
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+
+    <!-- Login-->
+    <string name="login_facebook">Login with Facebook</string>
+    <string name="login_google">Login with Google</string>
 </resources>

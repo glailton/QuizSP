@@ -1,22 +1,29 @@
 package br.com.glailton.quizsp;
 
 import android.app.Activity;
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
-import java.util.logging.Handler;
+public class QuizSP extends Activity {
 
+    private static final int REQUEST_CODE_RESOLVE_ERR = 9000;
 
-public class MainActivity extends Activity {
+    private ProgressDialog mConnectionProgressDialog;
+  /*  private PlusClient mPlusClient;
+    private ConnectionResult mConnectionResult;*/
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-
-     //   int secondsDelayed = 1;
+        setContentView(R.layout.login);
+      /*  mPlusClient = new PlusClient.Builder(this,this,this)
+                .setVisibleActivities("http://schemas.google.com/AddActivity", "http://schemas.google.com/BuyActivity")
+                .build();*/
     }
 
 
@@ -40,5 +47,15 @@ public class MainActivity extends Activity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void loginAppGoogle(View view){
+     /*   startActivity(new Intent(this, DashboardActivity.class));
+        Log.v("Glailton", "entrou");*/
+    }
+
+    public void loginAppFacebook(View view){
+        startActivity(new Intent(this, DashboardActivity.class));
+        Log.v("Glailton", "entrou");
     }
 }
