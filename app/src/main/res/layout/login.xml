@@ -2,7 +2,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/linear_login"
-    android:background="@drawable/sp_login"
     android:adjustViewBounds="true"
     android:scaleType="fitXY"
     android:gravity="center_vertical"
@@ -15,12 +14,11 @@
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:textStyle="bold"/>
 
-        <com.google.android.gms.common.SignInButton
-            android:id="@+id/button_google"
+    <!--    <com.google.android.gms.common.SignInButton
+            android:id="@+id/sign_in_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:onClick="loginAppGoogle"
-            android:text="@string/login_google"/>
+            android:text="@string/common_signin_button_text_long"/>
 
         <Button
             android:id="@+id/button_facebook"
@@ -28,5 +26,34 @@
             android:layout_height="wrap_content"
             android:onClick="loginAppFacebook"
             android:text="@string/login_facebook"/>
+
+        <CheckBox
+            android:id="@+id/keep_conected"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/keep_conected"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textStyle="bold"
+            android:textColor="@color/common_signin_btn_light_text_focused"/>-->
+
+    <!-- SIGN-IN BAR -->
+    <LinearLayout android:id="@+id/sign_in_bar" style="@style/SignInOutBar">
+
+        <com.google.android.gms.common.SignInButton
+            android:id="@+id/button_sign_in" style="@style/SignInButton" />
+
+        <TextView style="@style/SignInOutBarBlurb" android:text="@string/sign_in_explanation" />
+    </LinearLayout>
+
+    <!-- SIGN-OUT BAR -->
+    <LinearLayout android:id="@+id/sign_out_bar" style="@style/SignInOutBar"
+        android:visibility="gone">
+
+        <TextView style="@style/SignInOutBarBlurb"
+            android:text="@string/you_are_signed_in" />
+
+        <Button style="@style/SignOutButton" android:id="@+id/button_sign_out"
+            android:text="@string/sign_out" />
+    </LinearLayout>
 
 </LinearLayout>
